@@ -6,8 +6,8 @@ task:
   install_script: pkg install -y python3 py37-pip
 
 build_script:
-  - pip-3.7 install -r requirements.txt
-  - pip-3.7 install -r requirements-dev.txt
+  - pip-3.7 install --user -r requirements.txt
+  - pip-3.7 install --user -r requirements-dev.txt
   
 script:
   - python-3.7 -m pytest
