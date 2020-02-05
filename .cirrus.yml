@@ -8,6 +8,4 @@ task:
 build_script:
   - pip-3.7 install --user -r requirements.txt
   - pip-3.7 install --user -r requirements-dev.txt
-  
-script:
   - python-3.7 -m pytest
