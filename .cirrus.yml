@@ -4,8 +4,7 @@ freebsd_instance:
   
 task:
   install_script: pkg install -y python3 py37-pip
-
-build_script:
-  - pip-3.7 install --user -r requirements.txt
-  - pip-3.7 install --user -r requirements-dev.txt
+  build_script:
+  - pip-3.7 install -r requirements.txt
+  - pip-3.7 install -r requirements-dev.txt
   - python-3.7 -m pytest
