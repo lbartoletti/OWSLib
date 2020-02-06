@@ -3,7 +3,9 @@ freebsd_instance:
   image: freebsd-12-1-release-amd64
   
 task:
-  install_script: pkg install -y proj python3 py37-pip
+  install_script:
+  - sed -i.bak -e 's,pkg+http://pkg.FreeBSD.org/\${ABI}/quarterly,pkg+http://pkg.FreeBSD.org/\${ABI}/latest,' /etc/pkg/FreeBSD.conf
+  - pkg install -y proj python3 py37-pip
   build_script:
   - pip-3.7 install -r requirements.txt
   - pip-3.7 install -r requirements-dev.txt
